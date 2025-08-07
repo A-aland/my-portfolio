@@ -1,3 +1,4 @@
+import React from 'react';
 export default function Home({ whiteMode }) {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
