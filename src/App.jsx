@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./pages/about";
 import Projects from "./Projects"
-import Contact from "./pages/contact";
+import Contact from "./Contact";
 import Loading from "./components/Loading";
 import { useScrollFadeIn } from "./hooks/useScrollFadeIn";
 import Footer from "./components/Footer";
