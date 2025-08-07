@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import About from "./pages/about";
+import About from "./About";
 import Projects from "./Projects"
 import Contact from "./Contact";
 import Loading from "./components/Loading";
