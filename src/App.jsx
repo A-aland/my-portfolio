@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import Home from "./pages/home";
 import About from "./pages/about";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Loading from "./components/Loading";
 import { useScrollFadeIn } from "./hooks/useScrollFadeIn";
 import Footer from "./components/Footer";
+import Home from "./Home";
 
 function FadeInSection({ children, id }) {
   const { ref, visible } = useScrollFadeIn();
