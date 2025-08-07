@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./pages/about";
-import Projects from "./pages/projects";
+import Projects from "./Projects"
 import Contact from "./pages/contact";
 import Loading from "./components/Loading";
 import { useScrollFadeIn } from "./hooks/useScrollFadeIn";
