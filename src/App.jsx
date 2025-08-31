@@ -11,6 +11,7 @@ import Home from "./Home";
 function FadeInSection({ children, id }) {
   const { ref, visible } = useScrollFadeIn();
 
+  <title>Welcome to My Portfolio</title>;
   return (
     <section
       id={id}
