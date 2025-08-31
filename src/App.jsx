@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./About";
-import Projects from "./Projects"
+import Projects from "./Projects";
 import Contact from "./Contact";
 import Loading from "./components/Loading";
 import { useScrollFadeIn } from "./hooks/useScrollFadeIn";
@@ -41,6 +41,9 @@ export default function App() {
         whiteMode ? "bg-white text-black" : "bg-gray-900 text-white"
       }`}
     >
+      {/* potential adding future hosting <title>Welcome to My Portfolio</title> */}
+
+      <title>Welcome to My Portfolio</title>
       <Navbar whiteMode={whiteMode} setWhiteMode={setWhiteMode} />
 
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-20">
