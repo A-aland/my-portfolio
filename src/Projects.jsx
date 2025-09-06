@@ -1,17 +1,19 @@
 import { useRef } from "react";
 
+// Projects array with updated POS system info and PDF
 const projects = [
   {
-    title: "Smart Dashboard",
+    title: "POS System",
     description:
-      "A responsive dashboard UI using React, Tailwind, and Recharts for interactive data visualization.",
-    link: "https://github.com", // GitHub main page
+      "A complete market management and cashier system built with React and Tailwind. " +
+      "Includes modules for Dashboard, Users, Items, Stock Entries, Brands, Categories, POS, and Returns.",
+    pdf: "https://drive.google.com/uc?export=download&id=1fwyv965VdgZ9RKcPdSaMUIWp7PbU_Oq6", // Your Google Drive direct link
   },
   {
     title: "Task Manager",
     description:
       "A minimalistic to-do app built with React that helps manage daily tasks with filters and animations.",
-    link: "https://github.com", // GitHub main page
+    link: "https://github.com/yourrepo", // Replace with your GitHub repo if you want
   },
 ];
 
@@ -55,20 +57,28 @@ export default function Projects() {
         <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2">
           {projects.map((project, idx) => (
             <TiltCard key={idx}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="block bg-gray-850 rounded-xl shadow-lg p-8 border border-green-600 hover:shadow-green-500 transition-all"
-              >
+              <div className="block bg-gray-850 rounded-xl shadow-lg p-8 border border-green-600 hover:shadow-green-500 transition-all">
                 <h3 className="text-2xl font-semibold mb-3 text-green-300 drop-shadow-md">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-6 text-base">{project.description}</p>
-                <span className="text-green-400 underline hover:text-green-200 drop-shadow text-base">
-                  View on GitHub →
-                </span>
-              </a>
+                <p className="text-gray-300 mb-6 text-base">
+                  {project.description}
+                </p>
+
+                {/* Links Section */}
+                <div className="flex flex-wrap gap-3">
+                  {project.pdf && (
+                    <a
+                      href={project.pdf}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 bg-gray-700 text-green-300 rounded-lg shadow hover:bg-gray-600 transition"
+                    >
+                      View PDF Showcase
+                    </a>
+                  )}
+                </div>
+              </div>
             </TiltCard>
           ))}
         </div>
