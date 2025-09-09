@@ -16,13 +16,7 @@ const contacts = [
     href: "https://wa.me/9647715994737",
     hoverColor: "hover:text-green-400",
   },
-  {
-    icon: <FaViber size={24} className="text-purple-500" />,
-    label: "Viber",
-    detail: "+964 771 599 47 37",
-    href: "viber://chat?number=%2B9647715994737",
-    hoverColor: "hover:text-purple-400",
-  },
+
   {
     icon: <FaEnvelope size={24} className="text-blue-400" />,
     label: "Email",
@@ -30,20 +24,7 @@ const contacts = [
     href: "mailto:alandkamal1999@gmail.com",
     hoverColor: "hover:text-blue-400",
   },
-  {
-    icon: <FaFacebook size={24} className="text-blue-600" />,
-    label: "Facebook",
-    detail: "aland.kamal.58",
-    href: "https://www.facebook.com/aland.kamal.58/",
-    hoverColor: "hover:text-blue-500",
-  },
-  {
-    icon: <FaInstagram size={24} className="text-pink-500" />,
-    label: "Instagram",
-    detail: "aland___99",
-    href: "https://www.instagram.com/aland___99/",
-    hoverColor: "hover:text-pink-500",
-  },
+
   {
     icon: <FaLinkedin size={24} className="text-sky-400" />,
     label: "LinkedIn",
@@ -61,8 +42,8 @@ function TiltCard({ children }) {
     const { left, top, width, height } = card.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
-    const rotateX = ((y / height) - 0.5) * 20;
-    const rotateY = ((x / width) - 0.5) * -20;
+    const rotateX = (y / height - 0.5) * 20;
+    const rotateY = (x / width - 0.5) * -20;
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
@@ -112,7 +93,9 @@ export default function Contact({ whiteMode }) {
                 <div>{icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold">{label}</h3>
-                  <p className={`text-cyan-300 ${whiteMode ? "text-black" : ""}`}>
+                  <p
+                    className={`text-cyan-300 ${whiteMode ? "text-black" : ""}`}
+                  >
                     {detail}
                   </p>
                 </div>
