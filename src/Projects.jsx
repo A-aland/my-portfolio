@@ -9,12 +9,6 @@ const projects = [
       "Includes modules for Dashboard, Users, Items, Stock Entries, Brands, Categories, POS, and Returns.",
     pdf: "https://drive.google.com/uc?export=download&id=1fwyv965VdgZ9RKcPdSaMUIWp7PbU_Oq6", // Your Google Drive direct link
   },
-  {
-    title: "Task Manager",
-    description:
-      "A minimalistic to-do app built with React that helps manage daily tasks with filters and animations.",
-    link: "https://github.com/yourrepo", // Replace with your GitHub repo if you want
-  },
 ];
 
 function TiltCard({ children }) {

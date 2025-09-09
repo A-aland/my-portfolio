@@ -9,8 +9,8 @@ function TiltLink({ href, text, color, whiteMode }) {
     const x = e.clientX - left;
     const y = e.clientY - top;
 
-    const rotateX = ((y / height) - 0.5) * 40;
-    const rotateY = ((x / width) - 0.5) * -40;
+    const rotateX = (y / height - 0.5) * 40;
+    const rotateY = (x / width - 0.5) * -40;
     const rotateZ = ((x - width / 2) / width) * 25;
 
     link.style.transform = `
@@ -33,6 +33,38 @@ function TiltLink({ href, text, color, whiteMode }) {
     `;
   };
 
+  // Build the color class safely
+  let colorClass;
+  switch (color) {
+    case "blue":
+      colorClass = whiteMode
+        ? "text-gray-800 hover:text-blue-600"
+        : "text-gray-300 hover:text-blue-400";
+      break;
+    case "purple":
+      colorClass = whiteMode
+        ? "text-gray-800 hover:text-purple-600"
+        : "text-gray-300 hover:text-purple-400";
+      break;
+    case "green":
+      colorClass = whiteMode
+        ? "text-gray-800 hover:text-green-600"
+        : "text-gray-300 hover:text-green-400";
+      break;
+    case "cyan":
+      colorClass = whiteMode
+        ? "text-gray-800 hover:text-cyan-600"
+        : "text-gray-300 hover:text-cyan-400";
+      break;
+    case "yellow":
+      colorClass = whiteMode
+        ? "text-gray-800 hover:text-yellow-600"
+        : "text-gray-300 hover:text-yellow-400";
+      break;
+    default:
+      colorClass = "text-gray-300";
+  }
+
   return (
     <a
       href={href}
@@ -48,11 +80,7 @@ function TiltLink({ href, text, color, whiteMode }) {
       }}
     >
       <span
-        className={`text-sm font-semibold transition-colors duration-300 ${
-          whiteMode
-            ? `text-gray-800 hover:text-${color}-600`
-            : `text-gray-300 hover:text-${color}-400`
-        }`}
+        className={`text-sm font-semibold transition-colors duration-300 ${colorClass}`}
       >
         {text}
       </span>
@@ -69,6 +97,8 @@ function TiltLink({ href, text, color, whiteMode }) {
               ? "bg-green-400"
               : color === "cyan"
               ? "bg-cyan-400"
+              : color === "yellow"
+              ? "bg-yellow-400"
               : "bg-gray-400"
           }
         `}
@@ -77,7 +107,6 @@ function TiltLink({ href, text, color, whiteMode }) {
   );
 }
 
-// Futuristic toggle button component
 function ModeToggle({ whiteMode, setWhiteMode }) {
   return (
     <button
@@ -91,7 +120,6 @@ function ModeToggle({ whiteMode, setWhiteMode }) {
         shadow-[0_0_15px_#0ff] hover:shadow-[0_0_25px_#0ff]
       `}
     >
-      {/* Glow background circle */}
       <span
         className={`
           absolute inset-0 rounded-full
@@ -101,8 +129,6 @@ function ModeToggle({ whiteMode, setWhiteMode }) {
           pointer-events-none
         `}
       />
-
-      {/* Toggle knob */}
       <span
         className={`
           relative w-6 h-6 rounded-full transition-transform duration-500
@@ -138,10 +164,36 @@ export default function Navbar({ whiteMode, setWhiteMode }) {
         </h1>
 
         <div className="space-x-8 hidden md:flex items-center">
-          <TiltLink href="#home" text="Home" color="blue" whiteMode={whiteMode} />
-          <TiltLink href="#about" text="About" color="purple" whiteMode={whiteMode} />
-          <TiltLink href="#projects" text="Projects" color="green" whiteMode={whiteMode} />
-          <TiltLink href="#contact" text="Contact" color="cyan" whiteMode={whiteMode} />
+          <TiltLink
+            href="#home"
+            text="Home"
+            color="blue"
+            whiteMode={whiteMode}
+          />
+          <TiltLink
+            href="#about"
+            text="About"
+            color="purple"
+            whiteMode={whiteMode}
+          />
+          <TiltLink
+            href="#projects"
+            text="Projects"
+            color="green"
+            whiteMode={whiteMode}
+          />
+          <TiltLink
+            href="#certificates"
+            text="Certificates"
+            color="yellow"
+            whiteMode={whiteMode}
+          />
+          <TiltLink
+            href="#contact"
+            text="Contact"
+            color="cyan"
+            whiteMode={whiteMode}
+          />
           <ModeToggle whiteMode={whiteMode} setWhiteMode={setWhiteMode} />
         </div>
       </div>

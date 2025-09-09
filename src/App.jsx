@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./About";
 import Projects from "./Projects";
+import Certificates from "./Certificates"; // ✅ Correct import
 import Contact from "./Contact";
 import Loading from "./components/Loading";
 import { useScrollFadeIn } from "./hooks/useScrollFadeIn";
@@ -10,8 +11,6 @@ import Home from "./Home";
 
 function FadeInSection({ children, id }) {
   const { ref, visible } = useScrollFadeIn();
-
-  <title>Welcome to My Portfolio</title>;
   return (
     <section
       id={id}
@@ -42,9 +41,6 @@ export default function App() {
         whiteMode ? "bg-white text-black" : "bg-gray-900 text-white"
       }`}
     >
-      {/* potential adding future hosting <title>Welcome to My Portfolio</title> */}
-
-      <title>Welcome to My Portfolio</title>
       <Navbar whiteMode={whiteMode} setWhiteMode={setWhiteMode} />
 
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-20">
@@ -75,6 +71,16 @@ export default function App() {
         <hr
           className={`border-t opacity-50 glow ${
             whiteMode ? "border-black" : "border-pink-600"
+          }`}
+        />
+
+        <FadeInSection id="certificates">
+          <Certificates whiteMode={whiteMode} />
+        </FadeInSection>
+
+        <hr
+          className={`border-t opacity-50 glow ${
+            whiteMode ? "border-black" : "border-yellow-600"
           }`}
         />
 
