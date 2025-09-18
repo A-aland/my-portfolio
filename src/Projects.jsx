@@ -7,7 +7,7 @@ const projects = [
     description:
       "A complete market management and cashier system built with React and Tailwind. " +
       "Includes modules for Dashboard, Users, Items, Stock Entries, Brands, Categories, POS, and Returns.",
-    pdf: "https://drive.google.com/file/d/1fwyv965VdgZ9RKcPdSaMUIWp7PbU_Oq6/view?usp=sharing", // Your Google Drive direct link
+    pdf: "https://drive.google.com/file/d/13lwwFgC8z-Um8NBT-BI9X4M1NOkEZ0MI/view?usp=sharing", // Your Google Drive direct link
   },
   {
     title: "Sulaymani Travel Advisor",
