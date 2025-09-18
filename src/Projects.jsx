@@ -7,13 +7,13 @@ const projects = [
     description:
       "A complete market management and cashier system built with React and Tailwind. " +
       "Includes modules for Dashboard, Users, Items, Stock Entries, Brands, Categories, POS, and Returns.",
-    pdf: "https://drive.google.com/uc?export=download&id=1fwyv965VdgZ9RKcPdSaMUIWp7PbU_Oq6", // Your Google Drive direct link
+    pdf: "https://drive.google.com/file/d/1fwyv965VdgZ9RKcPdSaMUIWp7PbU_Oq6/view?usp=sharing", // Your Google Drive direct link
   },
   {
     title: "Sulaymani Travel Advisor",
     description:
       "A web application showcasing famous places in Sulaymaniyah for locals and tourists. Built with React and Tailwind, it includes Google Maps integration, user registration with MongoDB, and supports dark/light modes",
-    pdf: "https://docs.google.com/presentation/d/1yr6jxpYU1PYzbw-GCAb4NU3nts2m5xOXJXVdZqhbC6M/edit?slide=id.g38063e984c4_0_566#slide=id.g38063e984c4_0_566", // You can add a PDF link later if needed
+    pdf: "https://drive.google.com/file/d/110uj-wr49Y88crOhF5VITPShYX2nnPVi/view?usp=sharing", // You can add a PDF link later if needed
   },
 ];
 
