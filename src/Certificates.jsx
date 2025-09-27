@@ -7,7 +7,14 @@ const certificates = [
     subtitle: "Front-End Web Application Development",
     description:
       "Successfully completed a 6-week internship program focused on building responsive and interactive front-end web applications, hosted by Chance.",
-    link: "https://drive.google.com/file/d/1jhlwNv_fKtabM4l7qTyL1wq8kb87z8HM/view?usp=sharing", // Replace with your PDF
+    link: "https://drive.google.com/file/d/1jhlwNv_fKtabM4l7qTyL1wq8kb87z8HM/view?usp=sharing",
+  },
+  {
+    title: "Arabic Language Completion Certificate",
+    subtitle: "6 Months at CIS College",
+    description:
+      "Successfully completed a 6-month intensive Arabic language course at CIS College, developing proficiency in reading, writing, and speaking.",
+    link: "https://drive.google.com/file/d/1LXH5GuQaV6vz7n9iaqXoyIiM0fcbdaDX/view?usp=drive_link", // Replace with actual link if available
   },
 ];
 
