@@ -1,6 +1,7 @@
 // Certificates.jsx
 import { useRef } from "react";
 
+// Certificates array
 const certificates = [
   {
     title: "Internship Completion Certificate",
@@ -14,10 +15,18 @@ const certificates = [
     subtitle: "6 Months at CIS College",
     description:
       "Successfully completed a 6-month intensive Arabic language course at CIS College, developing proficiency in reading, writing, and speaking.",
-    link: "https://drive.google.com/file/d/1LXH5GuQaV6vz7n9iaqXoyIiM0fcbdaDX/view?usp=drive_link", // Replace with actual link if available
+    link: "https://drive.google.com/file/d/1LXH5GuQaV6vz7n9iaqXoyIiM0fcbdaDX/view?usp=sharing",
+  },
+  {
+    title: "English Language Completion Certificate",
+    subtitle: "Intensive Program at Komar University",
+    description:
+      "Successfully completed this intensive English program at Komar University, achieving proficiency at CEFR B2 English level.",
+    link: "https://drive.google.com/file/d/1WnWiIqWexSAY4jh16x240qGQzLeIMhEx/view?usp=sharing", // Replace with actual link
   },
 ];
 
+// TiltCard component for 3D hover effect
 function TiltCard({ children }) {
   const cardRef = useRef(null);
 
@@ -26,13 +35,15 @@ function TiltCard({ children }) {
     const { left, top, width, height } = card.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
-    const rotateX = (y / height - 0.5) * 20;
-    const rotateY = (x / width - 0.5) * -20;
+    const rotateX = Math.min(Math.max((y / height - 0.5) * 15, -15), 15);
+    const rotateY = Math.min(Math.max((x / width - 0.5) * -15, -15), 15);
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    card.style.willChange = "transform";
   };
 
   const handleMouseLeave = () => {
-    cardRef.current.style.transform = "rotateX(0deg) rotateY(0deg)";
+    const card = cardRef.current;
+    card.style.transform = "rotateX(0deg) rotateY(0deg)";
   };
 
   return (
@@ -48,6 +59,7 @@ function TiltCard({ children }) {
   );
 }
 
+// Certificates component
 export default function Certificates({ whiteMode }) {
   return (
     <section className="min-h-screen px-6 py-20">
@@ -61,14 +73,15 @@ export default function Certificates({ whiteMode }) {
         >
           Certificates
         </h2>
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2">
+
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {certificates.map(({ title, subtitle, description, link }, idx) => (
             <TiltCard key={idx}>
               <div
-                className={`block rounded-xl shadow-lg p-8 border transition-all ${
+                className={`block rounded-xl shadow-lg p-8 border transition-transform duration-300 ${
                   whiteMode
-                    ? "bg-white border-black text-black hover:shadow-gray-400"
-                    : "bg-gray-850 border-yellow-600 text-white hover:shadow-yellow-500"
+                    ? "bg-white border-black text-black hover:shadow-gray-400 hover:scale-105"
+                    : "bg-gray-800 border-yellow-600 text-white hover:shadow-yellow-500 hover:scale-105"
                 }`}
               >
                 <h3 className="text-2xl font-semibold mb-2 text-yellow-300 drop-shadow-md">
@@ -81,6 +94,7 @@ export default function Certificates({ whiteMode }) {
                     href={link}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`View ${title}`}
                     className="px-4 py-2 bg-gray-700 text-yellow-300 rounded-lg shadow hover:bg-gray-600 transition"
                   >
                     View Certificate
